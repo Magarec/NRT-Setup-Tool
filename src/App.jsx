@@ -279,6 +279,14 @@ export default function App() {
   const [compareAId, setCompareAId] = useState("");
   const [compareBId, setCompareBId] = useState("");
   const [form, setForm] = useState(emptyForm);
+  const [showSplash, setShowSplash] = useState(true);
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    setShowSplash(false);
+  }, 1800);
+
+  return () => clearTimeout(timer);
+}, []);
 
   useEffect(() => {
 
@@ -445,6 +453,22 @@ async function removeSetup(id) {
   const compareB = setups.find((setup) => setup.id === compareBId);
 
   const currentUser = session?.user?.email || session?.user?.user_metadata?.driver_name || session?.driverName;
+  
+  if (showSplash) {
+  return (
+    <div className="splash-screen">
+      <div className="splash-card">
+        <div className="splash-badge">NOOB RACING TEAM</div>
+        <h1>NRT Setup Tool</h1>
+        <h2>V2</h2>
+        <div className="splash-loader">
+          <span></span>
+        </div>
+        <p>Setups werden geladen...</p>
+      </div>
+    </div>
+  );
+}
 
   return (
     <div className="app">
