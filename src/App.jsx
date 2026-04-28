@@ -459,8 +459,8 @@ async function removeSetup(id) {
     <div className="splash-screen">
       <div className="splash-card">
         <div className="splash-badge">NOOB RACING TEAM</div>
-        <h1>NRT Setup Tool</h1>
-        <h2>V2</h2>
+        <h1>Noob Racing Team Setup Tool</h1>
+		<p>Powered by Magarec</p>
         <div className="splash-loader">
           <span></span>
         </div>
