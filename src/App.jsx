@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Car, Check, Clipboard, LogIn, LogOut, Plus, Search, Shield, Star, Trash2, Trophy } from "lucide-react";
 import { supabase } from "./lib/supabase";
+import logo from "./assets/nrt-logo.png";
 
 const tracks = [
   "Barcelona",
@@ -458,6 +459,7 @@ async function removeSetup(id) {
   return (
     <div className="splash-screen">
       <div className="splash-card">
+	  <img src={logo} alt="NRT Logo" className="splash-logo" />
         <div className="splash-badge">NOOB RACING TEAM</div>
         <h1>Noob Racing Team Setup Tool</h1>
 		<p>Powered by Magarec</p>
